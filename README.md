@@ -13,84 +13,60 @@ In order to get ready for the hands on you should have the most recent **O2Physi
 ```
 START: Do you have O2Physics installed?
 │
-├─ NO ──→ Do you have aliBuild installed?
+├─ NO ──> Do you have aliBuild installed? To know if you have it type `aliBuild -h`
 │         │
-│         ├─ NO ──→ Install prerequisites
+│         ├─ NO ──> Install prerequisites: https://alice-doc.github.io/alice-analysis-tutorial/building/custom.htmlthen restart the tree
 │         │         │
-│         │         ├─ Are you on macOS?
-│         │         │   └─ YES ──→ Install: Xcode, Homebrew, then run:
-│         │         │              brew install alisw/system-deps/o2-full-deps
+│         │         ├─ Are you using macOS?
+│         │         │   └─ YES ──> follow https://alice-doc.github.io/alice-analysis-tutorial/building/prereq-macos.htmlthen restart the tree
 │         │         │
-│         │         ├─ Are you on Ubuntu/Debian?
-│         │         │   └─ YES ──→ Install system dependencies:
-│         │         │              sudo apt-get install curl libcurl4-openssl-dev python3-pip
+│         │         ├─ Are you using Ubuntu/Debian?
+│         │         │   └─ YES ──> follow https://alice-doc.github.io/alice-analysis-tutorial/building/prereq-ubuntu.html then restart the tree
 │         │         │
-│         │         └─ Are you on CentOS/RHEL/Alma?
-│         │             └─ YES ──→ Install system dependencies:
-│         │                        sudo yum install curl libcurl-devel python3-pip
-│         │         │
-│         │         └──→ Install aliBuild:
-│         │              pip3 install alibuild --upgrade
+│         │         └─ Are you using something else?
+│         │             └─ YES ──> follow the guide according to your system https://alice-doc.github.io/alice-analysis-tutorial/building/custom.html#prerequisites then restart the tree
 │         │
-│         └─ YES ──→ Is aliBuild up to date?
+│         └─ YES ──> Do you have `ALIBUILD_WORK_DIR` defined in your environment ? to check run e.g. `echo $ALIBUILD_WORK_DIR`  
 │                   │
-│                   ├─ NO ──→ Update aliBuild:
-│                   │         pip3 install alibuild --upgrade
+│                   ├─ NO ──> Do you have other software installed with aliBuild?
+│                   │         |
+|                   |         ├─ NO ──> go in a favourite directory and run `aliBuild init O2Physics`
+│                   │         |
+│                   │         |
+|                   |         └─ YES ──> go where you previously installed software with aliBuild, update alidist with `cd alidist && git pull --rebase && cd -`and then run `aliBuild init O2Physics`
 │                   │
-│                   └─ YES ──→ Create work directory and initialize:
-│                              mkdir -p ~/alice && cd ~/alice
-│                              aliBuild init O2Physics@master
+│                   │
+│                   └─ YES ──> Move to your software directory:
+│                              `cd $ALIBUILD_WORK_DIR/../`
+│                              `aliBuild init O2Physics@master`
 │                              │
-│                              └──→ Build O2Physics:
-│                                   aliBuild build O2Physics --defaults o2
-│                                   │
-│                                   └──→ Install ACTS (see ACTS section)
+│                              └──> Build O2Physics:
+│                                   `aliBuild build O2Physics --defaults o2`
 │
-└─ YES ──→ Is O2Physics up to date?
+└─ YES ──> Is O2Physics up to date?
            │
-           ├─ NO ──→ Update O2Physics:
+           ├─ NO ──> Update O2Physics:
            │         cd ~/alice/O2Physics (or your O2Physics path)
            │         git pull --rebase
            │         cd ~/alice
            │         aliBuild build O2Physics --defaults o2 --force-unknown-architecture
            │         │
-           │         └──→ Load environment:
+           │         └──> Load environment:
            │              alienv enter O2Physics/latest
            │
-           └─ YES ──→ Load environment and verify:
+           └─ YES ──> Load environment and verify:
                       alienv enter O2Physics/latest
                       o2-sim --version
                       │
-                      └──→ Is ACTS installed?
+                      └──> Is ACTS installed?
                            │
-                           ├─ NO ──→ Install ACTS:
+                           ├─ NO ──> Install ACTS:
                            │         aliBuild build ACTS --defaults o2
                            │
-                           └─ YES ──→ READY FOR HANDS-ON! ✓
+                           └─ YES ──> READY FOR HANDS-ON! ✓
 
 Troubleshooting:
-├─ Build fails? ──→ Check: disk space, internet connection, system dependencies
-├─ Environment issues? ──→ Run: alienv q (query installed packages)
-└─ Still problems? ──→ Clean rebuild: aliBuild build O2Physics --defaults o2 -d
+├─ Build fails? ──> Check: disk space, internet connection, system dependencies
+├─ Environment issues? ──> Run: alienv q (query installed packages)
+└─ Still problems? ──> Get in touch
 ```
-
-### Quick Start Commands
-
-For those who already have prerequisites:
-
-```bash
-# Install aliBuild
-pip3 install alibuild --upgrade
-
-# Initialize and build O2Physics
-mkdir -p ~/alice && cd ~/alice
-aliBuild init O2Physics@master
-aliBuild build O2Physics --defaults o2
-
-# Build ACTS
-aliBuild build ACTS --defaults o2
-
-# Load environment
-alienv enter O2Physics/latest
-```
-
