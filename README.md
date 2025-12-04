@@ -93,6 +93,7 @@ START: Do you have O2Physics installed?
                       o2-sim --version
                       │
                       └──> Is ACTS installed?
+                           (try to run `alienv enter ACTS/latest`)
                            │
                            ├─ NO ──> Install ACTS:
                            │         aliBuild build ACTS --defaults o2
