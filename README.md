@@ -46,12 +46,12 @@ It doesn't hurt to setup your lxplus access: https://linux-training.web.cern.ch/
 ```
 START: Do you have O2Physics installed?
 │
-├─ NO ──> Do you have aliBuild installed? To know if you have it type `aliBuild -h`
+├─ NO ──> Do you have aliBuild installed? To know if you have it type `aliBuild version`
 │         │
-│         ├─ NO ──> Install prerequisites: https://alice-doc.github.io/alice-analysis-tutorial/building/custom.htmlthen restart the tree
+│         ├─ NO ──> Install prerequisites: https://alice-doc.github.io/alice-analysis-tutorial/building/custom.html then restart the tree
 │         │         │
 │         │         ├─ Are you using macOS?
-│         │         │   └─ YES ──> follow https://alice-doc.github.io/alice-analysis-tutorial/building/prereq-macos.htmlthen restart the tree
+│         │         │   └─ YES ──> follow https://alice-doc.github.io/alice-analysis-tutorial/building/prereq-macos.html then restart the tree
 │         │         │
 │         │         ├─ Are you using Ubuntu/Debian?
 │         │         │   └─ YES ──> follow https://alice-doc.github.io/alice-analysis-tutorial/building/prereq-ubuntu.html then restart the tree
