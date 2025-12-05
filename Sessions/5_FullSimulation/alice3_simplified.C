@@ -18,10 +18,10 @@
 struct CylLayer {
   std::string name;
   std::string medium;
-  double rMin;
-  double rMax;
-  double halfZ;
-  int color;
+  double rMin;    // [cm]
+  double rMax;    // [cm]
+  double halfZ;   // [cm]
+  int color;      // ROOT color index
 };
 
 // ---------------------------------------------
@@ -94,13 +94,12 @@ void alice3_simplified()
   gGeoManager->SetTopVolume(top);
 
   // Define some example layers (numbers are placeholders!)
-  std::vector<CylLayer> layers = {
-    {"AL3_ITS3_L0", "ITS3_SILICON", 1.8, 2.0, 30.0, 2}, // inner tracker
-    {"AL3_ITS3_L1", "ITS3_SILICON", 2.6, 2.8, 30.0, 3},
-    {"AL3_ITS3_L2", "ITS3_SILICON", 3.4, 3.6, 30.0, 4},
-    {"AL3_TPC", "TPC_GAS", 80.0, 250.0, 250.0, 6},     // big gas cylinder
-    {"AL3_EMCAL", "EMCAL_MIX", 260.0, 280.0, 260.0, 7} // calorimeter shell
-  };
+  std::vector<CylLayer> layers;
+  layers.push_back(CylLayer{"AL3_ITS3_L0", "ITS3_SILICON", 1.8, 2.0, 30.0, 2}); // inner tracker layer 0
+  layers.push_back(CylLayer{"AL3_ITS3_L1", "ITS3_SILICON", 2.6, 2.8, 30.0, 3}); // inner tracker layer 1
+  layers.push_back(CylLayer{"AL3_ITS3_L2", "ITS3_SILICON", 3.4, 3.6, 30.0, 4}); // inner tracker layer 2
+  layers.push_back(CylLayer{"AL3_TPC", "TPC_GAS", 80.0, 250.0, 250.0, 6});     // big gas cylinder
+  layers.push_back(CylLayer{"AL3_EMCAL", "EMCAL_MIX", 260.0, 280.0, 260.0, 7}); // calorimeter shell
 
   // Build them into the world
   buildSimplifiedAlice3(top, layers);

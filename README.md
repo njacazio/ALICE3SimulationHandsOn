@@ -157,3 +157,52 @@ START: Did you follow the O2Physics installation decision tree above?
 Troubleshooting:
 └─ ACTS build fails? ──> Get in touch
 ```
+
+### ALIEN Certificate Decision Tree
+
+For several exercises you will need an ALIEN certificate. Follow the decision tree below:
+
+```
+START: Do you have an ALIEN certificate?
+│
+├─ NO ──> Generate your ALIEN certificate:
+│         Follow: https://alice-doc.github.io/alice-analysis-tutorial/start/cert.html
+│         │
+│         └──> Steps summary:
+│              1. Generate certificate request
+│              2. Submit to ALICE CA
+│              3. Wait for approval email
+│              4. Download and install certificate
+│              5. Restart this decision tree
+│
+└─ YES ──> Is your certificate installed and valid?
+           │
+           ├─ TEST: From within the O2Physics environment (i.e. after calling `alienv enter O2Physics/latest`) Run `alien-token-info`
+           │        │
+           │        ├─ Command not found? ──> Install AliEn client:
+           │        │                          `aliBuild build AliEn-Runtime --defaults o2`
+           │        │                          Then restart this decision tree
+           │        │
+           │        ├─ Certificate expired? ──> Renew your certificate:
+           │        │                           Follow renewal process at:
+           │        │                           https://alice-doc.github.io/alice-analysis-tutorial/start/cert.html
+           │        │                           Restart this decision tree after renewal
+           │        │
+           │        └─ Shows valid token? ──> Certificate is installed correctly! ✓
+           │
+           └─ Can you get an ALIEN token?
+                  │
+                  └─ TEST: Run `alien-token-init`
+                           Enter your certificate password
+                           │
+                           ├─ Success? ──> READY TO USE ALIEN! ✓
+                           │
+                           └─ Failed? ──> Common issues:
+                                          ├─ Wrong password
+                                          ├─ Certificate not in correct location (~/.globus/)
+                                          ├─ Certificate permissions wrong (should be 400)
+                                          └─ Check: https://alice-doc.github.io/alice-analysis-tutorial/start/cert.html
+
+Troubleshooting:
+└─ Still problems? ──> Get in touch!
+```
