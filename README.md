@@ -155,7 +155,11 @@ START: Did you follow the O2Physics installation decision tree above?
                                       └─ YES ──> READY FOR ACTS SESSION! ✓
 
 Troubleshooting:
-└─ ACTS build fails? ──> Get in touch
+├─ The build fails and you get something like `Imported target "HepMC3::rootIO" includes non-existent path`
+│                                             `"/local/workspace/DailyBuilds/DailyO2Physics-slc9/daily-tags.qEW020eupP/slc9_x86-64/ROOT/v6-36-04-alice2-3/include"`
+│      Then try to init the HepMC3 package as well in the same folder where you initialized ACTS `aliBuild init HepMC3`
+│
+└─ ACTS build still fails? ──> Get in touch
 ```
 
 ### Grid certificate Decision Tree
