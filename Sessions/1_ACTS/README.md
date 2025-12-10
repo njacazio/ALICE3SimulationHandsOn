@@ -1,4 +1,4 @@
-## Sesssion 75 min
+## Session 75 min
 https://docs.google.com/presentation/d/1g4y0Nt5p6S0w-OFqNXuBJ-aFzMOxAHxlBGm80TXNolU/edit?usp=sharing
 
 ## Scope of the session

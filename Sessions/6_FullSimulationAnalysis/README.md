@@ -1,4 +1,4 @@
-## Sesssion 75 min
+## Session 75 min
 
 ## Scope of the session
 - Learn how to read the information of the hits

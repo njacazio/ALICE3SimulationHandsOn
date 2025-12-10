@@ -1,4 +1,4 @@
-## Sesssion 75 min
+## Session 75 min
 
 ## Scope of the session
 - What is full simulation

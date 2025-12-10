@@ -4,32 +4,21 @@ import argparse
 import sys
 from acts.examples.reconstruction import (
     addSeeding,
-    # TruthSeedRanges,
     SeedFinderConfigArg,
     SeedFinderOptionsArg,
     SeedFilterConfigArg,
     SpacePointGridConfigArg,
     SeedingAlgorithmConfigArg,
     SeedingAlgorithm,
-    # ParticleSmearingSigmas,
-    addCKFTracks,
-    addTruthTrackingGsf,
-    #    CKFPerformanceConfig,
     TrackSelectorConfig,
-    addKalmanTracks,
     addAmbiguityResolution,
     AmbiguityResolutionConfig,
     CkfConfig,
-    addVertexFitting,
-    VertexFinder,
-    addSpacePointsMaking,  # May 2025
-    addHoughVertexFinding,  # May 2025
 )
 from acts.examples.simulation import (
     addParticleGun,
     MomentumConfig,
     EtaConfig,
-    PhiConfig,
     ParticleConfig,
     addPythia8,
     addGenParticleSelection,
@@ -38,7 +27,6 @@ from acts.examples.simulation import (
     addGeant4,
     ParticleSelectorConfig,
     addDigitization,
-    addDigiParticleSelection,
 )
 import pathlib
 import acts
@@ -399,21 +387,11 @@ print("Constant magnetic field applied: Bz =", pars.MF, "T")
 
 if pars.useFieldMap:
     print("Using custom maps of magnetic field")
-    mag_field_map_file = "../try_MF_solenoid_dipole/fieldMap_Alice3_with_absorber_2T_solenoid_5-9-23.txt"
+    mag_field_map_file = "fieldMap_Alice3_with_absorber_2T_solenoid_5-9-23.txt"
     import os
     if not os.path.exists(mag_field_map_file):
         raise RuntimeError("Magnetic field map file not found: " + mag_field_map_file)
     field = acts.examples.MagneticFieldMapXyz(mag_field_map_file)
-# field = acts.examples.MagneticFieldMapXyz( "../try_MF_solenoid_dipole/fieldMap_Alice3_with_absorber_1T_solenoid_v2_5-9-23.txt" )
-# field = acts.examples.MagneticFieldMapRz( "../try_MF_solenoid_dipole/L3_r_z_Br_Bz_in_mm_extended_by_hand.txt")
-# field = acts.examples.MagneticFieldMapRz( "../try_MF_solenoid_dipole/1T_7.5m_solenoid_1m_free_bore.txt" ) # NEEDS MORE TUNINGS?..
-
-# more info https://github.com/acts-project/acts/blob/v27.1.0/Examples/Scripts/Python/bfield_writing.py :
-
-# field = acts.examples.MagneticFieldMapRz( "../try_MF_solenoid_dipole/8m_solenoid_no_iron_TWICE_REDUCED_FIELD.txt")
-# field = acts.examples.MagneticFieldMapXyz( "../try_MF_solenoid_dipole/fieldMap_solenoid_dipoles_4-10-21_xyz_in_mm.txt" )
-# field = acts.examples.MagneticFieldMapXyz( "fieldMap_solenoid_dipoles_4-10-21_xyz_in_mm_TWICE_REDUCED_FIELD.txt" )
-# field = acts.examples.MagneticFieldMapXyz( "fieldMap_solenoid_dipoles_4-10-21_xyz_in_mm_StretchedPointsZ_by_1.25.txt" )
 
 print("Setting seed for random number generator")
 rnd = acts.examples.RandomNumbers(seed=42)
