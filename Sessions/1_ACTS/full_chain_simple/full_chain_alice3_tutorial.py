@@ -50,7 +50,7 @@ parser.add_argument(
     "-o",
     help="Output directory",
     type=pathlib.Path,
-    default=pathlib.Path.cwd().parent / "acts_simulation_output",
+    default=pathlib.Path.cwd() / "acts_simulation_output",
 )
 
 parser.add_argument(
