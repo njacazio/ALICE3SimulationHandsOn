@@ -10,7 +10,7 @@
     "nSigmaPionRich": 3,
     "pdg": 11,
     "processGen": 1,
-    "processRec": 1,
+    "processRec": 0,
     "pt-max": 5,
     "pt-min": 0,
     "selectReconstructed": 0,
