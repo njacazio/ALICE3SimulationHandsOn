@@ -187,19 +187,10 @@ struct alice3task {
     fitter.setMatCorrType(o2::base::Propagator::MatCorrType::USEMatCorrNONE);
 
     // Add histograms here to the registry
-    histos.add("hGeneratedD", "hGeneratedD", kTH1D, {axisPt});
-
-    histos.add("hMassD", "hMassD", kTH1D, {axisDMass});
-    histos.add("hDauDCA", "hDauDCA", kTH1D, {axisDcaDaughters});
-    histos.add("hDCAxy", "hDCAxy", kTH1D, {axisDCA});
-    histos.add("hDCAz", "hDCAz", kTH1D, {axisDCA});
   }
 
   void processGenerated(aod::McParticles const&)
   {
-    for (const auto& mcParticle : trueD) {
-      histos.fill(HIST("hGeneratedD"), mcParticle.pt());
-    }
   }
 
   void process(aod::Collision const& collision, alice3tracks const&, aod::McParticles const&)
@@ -220,8 +211,6 @@ struct alice3task {
           continue;
         }
 
-        histos.fill(HIST("hMassD"), dmeson.mass);
-        histos.fill(HIST("hDauDCA"), dmeson.dca * toMicrometers);
       }
     }
   }
