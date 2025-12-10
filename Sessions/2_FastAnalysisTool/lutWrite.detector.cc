@@ -4,7 +4,7 @@
 #include "lutWrite.cc"
 
 void
-fatInit_default(float field = 0.5, float rmin = 100.)
+fatInit_detector(float field = 0.5, float rmin = 100.)
 {
   fat.SetBField(field);
   fat.SetdNdEtaCent(400.);
@@ -42,11 +42,11 @@ fatInit_default(float field = 0.5, float rmin = 100.)
 }
 
 void
-lutWrite_default(const char *filename = "lutCovm.dat", int pdg = 211, float field = 0.5, float rmin = 100.)
+lutWrite_detector(const char *filename = "lutCovm.dat", int pdg = 211, float field = 0.5, float rmin = 100.)
 {
 
   // init FAT
-  fatInit_default(field, rmin);
+  fatInit_detector(field, rmin);
   // write
   lutWrite(filename, pdg, field);
   
