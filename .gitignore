@@ -46,3 +46,5 @@ core_dump_*
 dpl-config.json
 AnalysisResults.root
 AnalysisResults_trees.root
+*dictUmbrella*
+*dictContent*
