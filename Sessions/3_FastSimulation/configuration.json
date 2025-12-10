@@ -13,6 +13,7 @@
     "processRec": 0,
     "pt-max": 5,
     "pt-min": 0,
+    "requireHFEid": 0,
     "selectReconstructed": 0,
     "use-gen": 0
   },
