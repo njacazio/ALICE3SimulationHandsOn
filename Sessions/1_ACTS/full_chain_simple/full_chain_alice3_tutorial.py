@@ -70,9 +70,6 @@ if not os.path.exists(args.output):
 
 outputDir = args.output / f"sim_{args.generator}"
 
-# Partigle gun settings
-particle = acts.PdgParticle.ePionPlus
-npart = 1
 
 # General settings
 bFieldZ = 1
@@ -119,6 +116,10 @@ s = acts.examples.Sequencer(
     events=args.events, trackFpes=False, numThreads=args.threads, outputDir=str(outputDir))
 
 if args.generator == "gun":
+    # Partigle gun settings
+    particle = acts.PdgParticle.ePionPlus
+    npart = 1
+
     addParticleGun(
         s,
         MomentumConfig(pTmin * u.MeV, pTmax * u.GeV, transverse=True),
