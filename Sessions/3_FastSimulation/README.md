@@ -19,4 +19,3 @@ https://docs.google.com/presentation/d/1r0XfPtl9-VsCOagXk0ScpxJtakn8wNqEFnH6mwDX
 - Apply detector smearing using LUTs with the on-the-fly tracking simulation, understand how to feed LUTs to the fast-tracker and add a detector smearing
 - Study primary track performance for pions kaons and protons with multiple detector
 - verify secondary vertex reconstrucion with the on-the-fly simulation
-- check out the Hyperloop interface
