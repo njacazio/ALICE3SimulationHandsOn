@@ -34,8 +34,8 @@ echo "Running simulation with $NumberOfEvents events"
 Cmd="o2-sim-serial-run5 -n $NumberOfEvents -g $Generator -m $Modules --configKeyValues \"Diamond.position[0]=0;Diamond.position[1]=0;Diamond.position[2]=0;Diamond.width[0]=0;Diamond.width[1]=0;Diamond.width[2]=0;TRKBase.layoutML=kTurboStaves;TRKBase.layoutOL=kStaggered;\""
 echo "Executing simulation command: $Cmd"
 eval $Cmd || {
-	echo "Error: Simulation command failed"
-	exit 1
+    echo "Error: Simulation command failed"
+    exit 1
 }
 
 echo "Simulation complete."

@@ -3,13 +3,16 @@
 
 #include <Framework/Logger.h>
 
+#include <TGeoBBox.h>
 #include <TGeoManager.h>
 #include <TGeoMaterial.h>
+#include <TGeoMatrix.h>
 #include <TGeoMedium.h>
 #include <TGeoTube.h>
 #include <TGeoVolume.h>
 #include <TSystem.h>
 
+#include <cmath>
 #include <string>
 #include <vector>
 
