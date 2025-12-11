@@ -1,3 +1,5 @@
+// Author: Andrea Sofia Triolo 2025
+
 #include "TCanvas.h"
 #include "TFile.h"
 #include "TH1.h"
@@ -18,9 +20,9 @@ void saveCanvas(TH1* h, std::string title = "", std::string option = "", bool lo
     c->SetLogz();
   if (logy)
     c->SetLogy();
-  c->SaveAs(Form("plots/%s.pdf", title.c_str()));
-  c->SaveAs(Form("plots/%s.png", title.c_str()));
-  h->SaveAs(Form("plots/%s.root", title.c_str()));
+  c->SaveAs(Form("plots_digits/%s.pdf", title.c_str()));
+  c->SaveAs(Form("plots_digits/%s.png", title.c_str()));
+  h->SaveAs(Form("plots_digits/%s.root", title.c_str()));
 }
 
 static void slice_rows_P0L0(ROOT::RDF::RNode dfVDP0L0, int slice)
@@ -40,9 +42,9 @@ void drawDigitsTutorial()
   /*This macro reads the trkdigits.root digit file and produces simple maps for
    * a quarter of VD layer and an ML module*/
 
-  std::filesystem::create_directory("plots");
+  std::filesystem::create_directory("plots_digits");
 
-  ROOT::RDataFrame df("o2sim", "trkdigits.root"); /// reading the full file
+  ROOT::RDataFrame df("o2sim", "../5_FullSimulation/2_Simulation/SimulationResults/trkdigits.root"); /// reading the full file
 
   ////// defyning tables for detector parts of interest
   auto dfVDP0L0 = df.Define("mask", "(TRKDigit.mChipIndex == 0)")
@@ -166,7 +168,7 @@ void drawDigitsTutorial()
   hChip7->SetName(Form("chip%d", chip - 64));
   hChip7->Draw("colz");
 
-  cMod4->SaveAs("plots/ML_modules.png");
-  cMod4->SaveAs("plots/ML_modules.pdf");
-  cMod4->SaveAs("plots/ML_modules.root");
+  cMod4->SaveAs("plots_digits/ML_modules.png");
+  cMod4->SaveAs("plots_digits/ML_modules.pdf");
+  cMod4->SaveAs("plots_digits/ML_modules.root");
 }
