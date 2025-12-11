@@ -10,3 +10,10 @@ https://docs.google.com/presentation/d/1v4eEcsgrTkGfa-7DX7v3wSLaW4xmjF0zFJ1cks4S
 
 ## At the end:
 - At the end the analyser should be able to run a full analysis and extract a physics perforamnce statement on the detector configuration used as input
+
+## Assignment
+- setup your hyperloop analysis with a large jira ticket
+- expand your workflow to include PID
+- Reconstruct D0 invariant masses
+- Improve signal extraction with PID
+- Perform an analysis of multiple detector in a single go
