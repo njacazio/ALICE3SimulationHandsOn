@@ -8,3 +8,8 @@ https://docs.google.com/presentation/d/1U-D6RVjo77e6QhOdkUnQzyk-gH2Jilij9oTfpMop
 
 ## At the end:
 - the analysers should be able to produce a given detector geometry, assess its performance and produce the LUTs to be plugged into the FastSimulation
+
+## Assignment:
+- preparing a detector layout
+- producing LUTs 
+- plotting them
