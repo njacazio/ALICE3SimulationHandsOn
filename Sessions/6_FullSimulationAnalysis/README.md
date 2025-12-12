@@ -1,5 +1,7 @@
 ## Session 75 min
 
+https://docs.google.com/presentation/d/12DadiAVo64XoUK2Xzaw2j7Pk4-zTeyV42sdOeYEIOn8/edit?slide=id.g3724b559edd_0_113#slide=id.g3724b559edd_0_113
+
 ## Scope of the session
 - Learn how to read the information of the hits
 - Learn how to draw the detector geometry

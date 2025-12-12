@@ -1,5 +1,7 @@
 ## Session 75 min
 
+https://docs.google.com/presentation/d/1pnlpXIROD4GcGiF9hO16fX46ymK897w_FYr0hFEQmlg/edit?slide=id.g3724b559edd_0_113#slide=id.g3724b559edd_0_113
+
 ## Scope of the session
 - What is full simulation
 - What is geometry
