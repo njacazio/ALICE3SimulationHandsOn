@@ -1,0 +1,1 @@
+../3_FastSimulation/build_o2physics_with_alice3_only.sh
