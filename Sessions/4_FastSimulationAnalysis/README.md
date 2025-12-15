@@ -1,5 +1,4 @@
 ## Session 75 min
-https://docs.google.com/presentation/d/1v4eEcsgrTkGfa-7DX7v3wSLaW4xmjF0zFJ1cks4SxPs/edit?usp=sharing
 
 ## Scope of the session
 - Learn what the other utility tasks do for the on the fly simulation do (TOF, RICH, ClusterSize), integration with hyperloop 15 min
